@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/toggleRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_widget"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingStart="14dp"
+    android:paddingTop="12dp"
+    android:paddingEnd="10dp"
+    android:paddingBottom="12dp">
+
+    <ImageView
+        android:id="@+id/toggleIcon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/bg_widget_button"
+        android:contentDescription="@null"
+        android:padding="9dp"
+        android:src="@drawable/ic_moon" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/widget_title"
+            android:textColor="@color/text"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/toggleStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/text2"
+            android:textSize="10sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/toggleState"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_widget_button"
+        android:fontFamily="sans-serif-medium"
+        android:minWidth="52dp"
+        android:gravity="center"
+        android:paddingStart="10dp"
+        android:paddingTop="7dp"
+        android:paddingEnd="10dp"
+        android:paddingBottom="7dp"
+        android:text="@string/widget_toggle_off"
+        android:textColor="@color/text2"
+        android:textSize="10sp" />
+
+    <ImageView
+        android:id="@+id/toggleOpen"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="6dp"
+        android:background="@drawable/bg_widget_button"
+        android:contentDescription="@string/widget_open"
+        android:padding="5dp"
+        android:src="@drawable/ic_chevron"
+        android:tint="@color/text2" />
+</LinearLayout>

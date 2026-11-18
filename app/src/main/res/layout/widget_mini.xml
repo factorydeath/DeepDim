@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/miniRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_widget"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingStart="14dp"
+    android:paddingTop="10dp"
+    android:paddingEnd="10dp"
+    android:paddingBottom="10dp">
+
+    <ImageView
+        android:id="@+id/miniIcon"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_moon" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/widget_title"
+            android:textColor="@color/text"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/miniStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/text2"
+            android:textSize="10sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/miniValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="@color/accent"
+        android:textSize="22sp" />
+
+    <ImageView
+        android:id="@+id/miniOpen"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="6dp"
+        android:background="@drawable/bg_widget_button"
+        android:contentDescription="@string/widget_open"
+        android:padding="6dp"
+        android:src="@drawable/ic_chevron"
+        android:tint="@color/text2" />
+</LinearLayout>

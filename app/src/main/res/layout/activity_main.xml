@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_app">
+
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        android:overScrollMode="never"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="36dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-light"
+                        android:letterSpacing="0.02"
+                        android:text="@string/app_name"
+                        android:textColor="@color/text"
+                        android:textSize="28sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:letterSpacing="0.24"
+                        android:text="@string/tagline"
+                        android:textColor="@color/text3"
+                        android:textSize="9sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/rootBadge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_badge_amber"
+                    android:fontFamily="sans-serif-medium"
+                    android:letterSpacing="0.12"
+                    android:text="@string/rootless_badge"
+                    android:textColor="@color/accent"
+                    android:textSize="9sp" />
+
+                <ImageButton
+                    android:id="@+id/btnSettings"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:layout_marginStart="10dp"
+                    android:background="@drawable/bg_icon_button"
+                    android:contentDescription="@string/settings"
+                    android:padding="11dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_gear"
+                    android:tint="@color/text2" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/permissionCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_card"
+                android:orientation="vertical"
+                android:padding="18dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:letterSpacing="0.16"
+                    android:text="@string/permission_needed"
+                    android:textColor="@color/accent"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:id="@+id/permissionBody"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:lineSpacingExtra="3dp"
+                    android:text="@string/permission_overlay_body"
+                    android:textColor="@color/text2"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/btnGrantOverlay"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="14dp"
+                    android:background="@drawable/bg_button_primary"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center"
+                    android:text="@string/perm_overlay"
+                    android:textColor="#161006"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_card"
+                android:orientation="vertical"
+                android:padding="18dp">
+
+                <com.deepdim.DialView
+                    android:id="@+id/dial"
+                    android:layout_width="match_parent"
+                    android:layout_height="252dp"
+                    android:layout_gravity="center_horizontal" />
+
+                <TextView
+                    android:id="@+id/warningText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:gravity="center"
+                    android:text="@string/safety_note"
+                    android:textColor="@color/red"
+                    android:textSize="10sp"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/activeTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-medium"
+                            android:text="@string/inactive"
+                            android:textColor="@color/text"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/statusText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="@string/status_inactive"
+                            android:textColor="@color/text2"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+
+                    <Switch
+                        android:id="@+id/switchActive"
+                        style="@style/DeepDim.Switch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp" />
+                </LinearLayout>
+
+                <TextView
+                    style="@style/DeepDim.Section"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:text="@string/presets" />
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:clipToPadding="false"
+                    android:scrollbars="none">
+
+                    <LinearLayout
+                        android:id="@+id/presetRow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" />
+                </HorizontalScrollView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:background="@drawable/bg_card"
+                android:orientation="vertical"
+                android:padding="18dp">
+
+                <TextView
+                    style="@style/DeepDim.Section"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/layers" />
+
+                <TextView
+                    style="@style/DeepDim.Caption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/layers_hint" />
+
+                <include
+                    android:id="@+id/rowHw"
+                    layout="@layout/layer_row" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@color/stroke" />
+
+                <include
+                    android:id="@+id/rowExtra"
+                    layout="@layout/layer_row" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@color/stroke" />
+
+                <include
+                    android:id="@+id/rowWarm"
+                    layout="@layout/layer_row" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:background="@drawable/bg_card"
+                android:orientation="vertical"
+                android:padding="18dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/DeepDim.Section"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/schedule" />
+
+                    <Switch
+                        android:id="@+id/switchSchedule"
+                        style="@style/DeepDim.Switch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/btnStartTime"
+                        android:layout_width="0dp"
+                        android:layout_height="66dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_card_soft"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical"
+                        android:paddingLeft="14dp">
+
+                        <TextView
+                            style="@style/DeepDim.Caption"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/schedule_from" />
+
+                        <TextView
+                            android:id="@+id/startTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-light"
+                            android:text="22:00"
+                            android:textColor="@color/text"
+                            android:textSize="22sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/btnEndTime"
+                        android:layout_width="0dp"
+                        android:layout_height="66dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_card_soft"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical"
+                        android:paddingLeft="14dp">
+
+                        <TextView
+                            style="@style/DeepDim.Caption"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/schedule_to" />
+
+                        <TextView
+                            android:id="@+id/endTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-light"
+                            android:text="07:00"
+                            android:textColor="@color/text"
+                            android:textSize="22sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/scheduleHint"
+                    style="@style/DeepDim.Caption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/schedule_hint" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:background="@drawable/bg_card"
+                android:orientation="vertical"
+                android:padding="18dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:contentDescription="@null"
+                        android:src="@drawable/ic_clock"
+                        android:tint="@color/accent" />
+
+                    <TextView
+                        style="@style/DeepDim.Section"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="9dp"
+                        android:layout_weight="1"
+                        android:text="@string/sleep" />
+                </LinearLayout>
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:clipToPadding="false"
+                    android:scrollbars="none">
+
+                    <LinearLayout
+                        android:id="@+id/sleepRow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" />
+                </HorizontalScrollView>
+
+                <TextView
+                    android:id="@+id/sleepHint"
+                    style="@style/DeepDim.Caption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/sleep_hint" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:background="@drawable/bg_card"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    style="@style/DeepDim.Section"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/more" />
+
+                <include
+                    android:id="@+id/rowTile"
+                    layout="@layout/row_link"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp" />
+
+                <include
+                    android:id="@+id/rowWidget"
+                    layout="@layout/row_link"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <include
+                    android:id="@+id/rowDiag"
+                    layout="@layout/row_link"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <include
+                    android:id="@+id/rowSettings"
+                    layout="@layout/row_link"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:drawablePadding="8dp"
+                android:lineSpacingExtra="3dp"
+                android:text="@string/safety_note"
+                android:textColor="@color/text3"
+                android:textSize="11sp" />
+
+            <TextView
+                android:id="@+id/versionText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:gravity="center"
+                android:textColor="@color/text3"
+                android:textSize="10sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:letterSpacing="0.22"
+                android:text="@string/made_night"
+                android:textColor="#33404D"
+                android:textSize="8sp" />
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

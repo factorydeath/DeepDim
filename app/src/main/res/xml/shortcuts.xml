@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/ic_moon"
+        android:shortcutId="night"
+        android:shortcutLongLabel="@string/shortcut_night"
+        android:shortcutShortLabel="@string/shortcut_night_short">
+        <intent
+            android:action="com.deepdim.action.PRESET_NIGHT"
+            android:targetClass="com.deepdim.MainActivity"
+            android:targetPackage="com.deepdim" />
+    </shortcut>
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/ic_moon"
+        android:shortcutId="cinema"
+        android:shortcutLongLabel="@string/shortcut_cinema"
+        android:shortcutShortLabel="@string/shortcut_cinema_short">
+        <intent
+            android:action="com.deepdim.action.PRESET_CINEMA"
+            android:targetClass="com.deepdim.MainActivity"
+            android:targetPackage="com.deepdim" />
+    </shortcut>
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/ic_close"
+        android:shortcutId="off"
+        android:shortcutLongLabel="@string/shortcut_off"
+        android:shortcutShortLabel="@string/shortcut_off_short">
+        <intent
+            android:action="com.deepdim.action.PRESET_OFF"
+            android:targetClass="com.deepdim.MainActivity"
+            android:targetPackage="com.deepdim" />
+    </shortcut>
+</shortcuts>

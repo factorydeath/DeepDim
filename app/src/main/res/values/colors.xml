@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bg">#07080A</color>
+    <color name="bg2">#0C0F14</color>
+    <color name="card">#101318</color>
+    <color name="card2">#151920</color>
+    <color name="stroke">#1D222B</color>
+    <color name="stroke2">#2A313C</color>
+    <color name="text">#EDEFF2</color>
+    <color name="text2">#9AA3AF</color>
+    <color name="text3">#5E6672</color>
+    <color name="accent">#FFB454</color>
+    <color name="accent2">#FF7A18</color>
+    <color name="accent_soft">#33FFB454</color>
+    <color name="green">#7BDE9A</color>
+    <color name="green_soft">#1A3324</color>
+    <color name="red">#FF6B6B</color>
+    <color name="red_soft">#331B1B</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="icon_bg">#0B0D11</color>
+</resources>
